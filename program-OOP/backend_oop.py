@@ -15,7 +15,6 @@ class Database:
     def insert_to_db(self, title, author, year, isbn):
         self.cursor.execute("INSERT INTO book VALUES (NULL, ?, ?, ?, ?)", (title, author, year, isbn))
         self.conn.commit()
-        self.conn.close()
 
     def view_db(self):
         self.cursor.execute("SELECT * FROM book")
